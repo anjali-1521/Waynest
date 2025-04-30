@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+    <!-- Hero Section (Static) -->
+    <div class="hero-section" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url({{ url_for('static', filename='images/background.jpg') }});">
+        <div class="container text-center">
+            <h1 class="fade-in hero-title">Welcome to Waynest</h1>
+            <p class="fade-in hero-subtitle">From Mountains to Metropolises: Stays That Redefine Travel</p>
+            <form method="GET" action="{{ url_for('properties') }}" class="fade-in hero-search">
+                <div class="input-group mx-auto" style="max-width: 500px;">
+                    <input type="text" class="form-control" name="location" placeholder="Where are you going?" aria-label="Search locations">
+                    <button class="btn btn-primary" type="submit">Search</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Explore by Vibe Section -->
+    <section class="py-5 bg-white">
+        <div class="container">
+            <h2 class="text-center mb-5 fade-in">Explore by Vibe</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card vibe-card fade-in h-100 text-center">
+                        <img src="{{ url_for('static', filename='images/dubrovnik.jpg') }}" class="card-img-top" alt="Adventure" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Adventure</h5>
+                            <p class="card-text">Seek thrills in destinations like Dubrovnik’s coastal cliffs or Nairobi’s safaris.</p>
+                            <a href="{{ url_for('properties', location='Dubrovnik') }}" class="btn btn-primary">Discover Adventure</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card vibe-card fade-in h-100 text-center">
+                        <img src="{{ url_for('static', filename='images/bali.jpg') }}" class="card-img-top" alt="Relaxation" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Relaxation</h5>
+                            <p class="card-text">Unwind in serene spots like Bali’s rice fields or Santorini’s caldera.</p>
+                            <a href="{{ url_for('properties', location='Ubud') }}" class="btn btn-primary">Find Your Zen</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card vibe-card fade-in h-100 text-center">
+                        <img src="{{ url_for('static', filename='images/dehradun.jpg') }}" class="card-img-top" alt="Culture" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Culture</h5>
+                            <p class="card-text">Immerse in local traditions from Dehradun’s yoga to Kyoto’s geishas.</p>
+                            <a href="{{ url_for('properties', location='Dehradun') }}" class="btn btn-primary">Explore Culture</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Waynest Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5 fade-in">Why Choose Waynest?</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card feature-card fade-in h-100 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-globe fa-3x mb-3 text-primary color"></i>
+                            <h5 class="card-title">Global Destinations</h5>
+                            <p class="card-text">Explore 34 unique properties, from Dehradun’s mountains to Tokyo’s zen retreats.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card feature-card fade-in h-100 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-cloud-sun fa-3x mb-3 text-primary color"></i>
+                            <h5 class="card-title">Weather Vibe Match</h5>
+                            <p class="card-text">Personalize your stay with activities tailored to the local weather and your mood.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card feature-card fade-in h-100 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-concierge-bell fa-3x mb-3 text-primary color"></i>
+                            <h5 class="card-title">Curated Experiences</h5>
+                            <p class="card-text">Dive into local culture with handpicked activities, like yoga in Dehradun.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

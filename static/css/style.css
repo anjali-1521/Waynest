@@ -1,0 +1,423 @@
+/* static/css/style.css */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7fa;
+    color: #2c3e50;
+    margin: 0;
+    font-weight: 400;
+}
+
+.navbar {
+    background-color: #5C9EAD;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: #EEEEEE !important;
+    transition: color 0.3s;
+}
+
+.navbar-brand:hover {
+    color: #326273 !important;
+}
+
+.nav-link {
+    color: #EEEEEE !important;
+    font-weight: 400;
+    margin-left: 1rem;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #326273 !important;
+}
+
+.hero-section {
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 150px 0;
+    text-align: center;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-search {
+    margin-top: 2rem;
+}
+
+.hero-search .form-control {
+    border-radius: 50px 0 0 50px;
+    padding: 1rem 1.5rem;
+    font-size: 1.1rem;
+}
+
+.hero-search .btn-primary {
+    border-radius: 0 50px 50px 0;
+    padding: 1rem 2rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+.card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+.card-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.35rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.card-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 0.95rem;
+    color: #6c757d;
+}
+
+.btn-primary {
+    background-color: #5e9fad;
+    border-color: #5e9fad;
+    border-radius: 50px;
+    padding: 0.8rem 2rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #5C9EAD !important;
+    border-color: #5C9EAD !important;
+    transform: scale(1.05);
+}
+
+.form-control {
+    border-radius: 10px;
+    border: 1px solid #e0e4e8;
+    padding: 0.8rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-control:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
+}
+
+.form-label {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+.alert {
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.container {
+    max-width: 1200px;
+}
+
+p, a, li, td, th, button, input, textarea, label {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 400;
+}
+
+.property-card {
+    padding: 2rem;
+}
+
+.property-image {
+    max-height: 500px;
+    object-fit: cover;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.property-description {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #4a5568;
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin-top: 1.5rem;
+}
+
+.weather-vibe {
+    background-color: #e6f0fa;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-top: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.weather-vibe h4 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.weather-vibe select, .weather-vibe input {
+    border-radius: 8px;
+}
+
+.weather-vibe .btn-primary {
+    padding: 0.5rem 1.5rem;
+}
+
+.vibe-tip {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    color: #2c3e50;
+    margin-top: 1rem;
+    line-height: 1.6;
+}
+
+.auth-card {
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    max-width: 500px;
+    margin: 0 auto;
+    margin-top: 3rem;
+}
+
+.auth-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.auth-form .form-control {
+    border-radius: 8px;
+    padding: 0.9rem;
+    font-size: 1rem;
+}
+
+.auth-form .form-label {
+    font-weight: 500;
+    color: #4a5568;
+}
+
+.auth-form .btn-primary {
+    width: 100%;
+    padding: 0.9rem;
+    font-size: 1rem;
+    border-radius: 8px;
+}
+
+.auth-form .form-check-label {
+    font-weight: 400;
+    color: #6c757d;
+}
+
+.feature-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.vibe-card {
+    border: 1px solid #d1e7ff;
+    border-radius: 15px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.vibe-card:hover {
+    transform: translateY(-5px);
+    border-color: #3498db;
+}
+
+.booking-card {
+    border: 1px solid #d1e7ff;
+    border-radius: 15px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    padding: 1.5rem;
+}
+
+.booking-card:hover {
+    transform: translateY(-5px);
+    border-color: #3498db;
+}
+
+.booking-card .card-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.booking-card .card-text {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.booking-card .btn-primary {
+    width: auto;
+    padding: 0.6rem 1.5rem;
+}
+
+/* List Property Styles */
+.list-property-card {
+    border: 1px solid #d1e7ff;
+    border-radius: 15px;
+    background-color: #ffffff;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    padding: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.list-property-card:hover {
+    transform: translateY(-5px);
+}
+
+.list-property-label {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.list-property-input {
+    border-radius: 10px;
+    padding: 0.9rem;
+    font-size: 1rem;
+    border: 1px solid #e0e4e8;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.list-property-input:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
+}
+
+.list-property-btn {
+    padding: 0.9rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    width: auto;
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    .hero-search .form-control {
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+    .hero-search .btn-primary {
+        padding: 0.8rem 1.5rem;
+    }
+    .booking-card {
+        padding: 1rem;
+    }
+    .booking-card .card-title {
+        font-size: 1.3rem;
+    }
+    .list-property-card {
+        padding: 1.5rem;
+    }
+    .list-property-label {
+        font-size: 1rem;
+    }
+    .list-property-input {
+        font-size: 0.95rem;
+    }
+    .list-property-btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+
+.color{
+    color: #5C9EAD !important;
+}

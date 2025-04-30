@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% block title %}{{ property.title }}{% endblock %}
+{% block content %}
+    <div class="container py-5">
+        <div class="card property-card fade-in">
+            {% if property.image_path %}
+                <img src="{{ url_for('static', filename=property.image_path) }}" class="property-image" alt="{{ property.title }}">
+            {% else %}
+                <img src="{{ url_for('static', filename='images/placeholder.jpg') }}" class="property-image" alt="No image">
+            {% endif %}
+            <div class="card-body">
+                <h2 class="mb-3" style="font-size: 2.5rem;">{{ property.title }}</h2>
+                <p class="property-description">{{ property.description }}</p>
+                <p><strong>Location:</strong> {{ property.location }}</p>
+                <p><strong>Price per Night:</strong> ${{ property.price_per_night }}</p>
+                
+                <h4 class="mt-4">Local Experiences</h4>
+                {% if experiences %}
+                    <ul class="list-unstyled">
+                        {% for exp in experiences %}
+                            <li class="mb-2"><strong>{{ exp.title }}</strong>: {{ exp.description }}</li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>No local experiences listed.</p>
+                {% endif %}
+                
+                <!-- Weather Vibe Match Section -->
+                <div class="weather-vibe">
+                    <h4>Weather Vibe Match</h4>
+                    <form method="POST">
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <label for="check_in_vibe" class="form-label">Check-in Date</label>
+                                <input type="date" class="form-control" id="check_in_vibe" name="check_in" required>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label for="weather_vibe" class="form-label">Weather Vibe</label>
+                                <select class="form-control" id="weather_vibe" name="weather_vibe" required>
+                                    <option value="sunny">Sunny</option>
+                                    <option value="rainy">Rainy</option>
+                                    <option value="snowy">Snowy</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4 d-flex align-items-end mb-3">
+                                <button type="submit" class="btn btn-primary">Get Vibe Tip</button>
+                            </div>
+                        </div>
+                    </form>
+                    {% if vibe_tip %}
+                        <p class="vibe-tip">{{ vibe_tip }}</p>
+                    {% endif %}
+                </div>
+                
+                {% if session.user_id %}
+                    <h4 class="mt-5">Book This Property</h4>
+                    <form method="POST" class="mb-5">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="check_in" class="form-label">Check-in Date</label>
+                                <input type="date" class="form-control" id="check_in" name="check_in" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="check_out" class="form-label">Check-out Date</label>
+                                <input type="date" class="form-control" id="check_out" name="check_out" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="total_price" class="form-label">Total Price ($)</label>
+                            <input type="number" step="0.01" class="form-control" id="total_price" name="total_price" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Book Now</button>
+                    </form>
+                    
+                    <h4>Leave a Review</h4>
+                    <form method="POST">
+                        <div class="mb-3">
+                            <label for="rating" class="form-label">Rating (1-5)</label>
+                            <input type="number" class="form-control" id="rating" name="rating" min="1" max="5" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="comment" class="form-label">Comment</label>
+                            <textarea class="form-control" id="comment" name="comment" rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit Review</button>
+                    </form>
+                {% endif %}
+                
+                <h4 class="mt-5">Reviews</h4>
+                {% if reviews %}
+                    {% for review in reviews %}
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <p class="mb-1"><strong>{{ review.username }}</strong>: {{ review.rating }}/5</p>
+                                <p>{{ review.comment }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p>No reviews yet.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

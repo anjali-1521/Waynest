@@ -1,0 +1,4 @@
+flask==2.3.3
+mysql-connector-python==8.2.0
+werkzeug==2.3.7
+Flask-WTF==1.2.1
